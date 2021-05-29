@@ -40,7 +40,7 @@ module.exports = {
       resolve: 'gatsby-source-graphcms',
       options: {
         endpoint: process.env.GRAPHCMS_ENDPOINT,
-        token: process.env.GRAPHCMS_TOKEN,
+        token: process.env.GRAPHCMS_TOKEN,  
       },
     },
     'gatsby-plugin-postcss',
