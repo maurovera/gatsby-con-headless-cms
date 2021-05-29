@@ -1,8 +1,15 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Home`,
+    titleTemplate: '%s | Cody Blog',
+    description: `Morbi a tempus quam. Duis blandit euismod efficitur. Curabitur facilisis mi lorem, porttitor ultrices elit finibus elementum. Sed nulla dolor, congue tristique ligula id, molestie porta libero. Donec quis ante nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
+    url: 'https//codyblog.com',
+    image:'/images/og.jpg',
+    author: `@gcodigoFacilito`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,7 +35,15 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-gatsby-cloud`, 
+    {
+      resolve: 'gatsby-source-graphcms',
+      options: {
+        endpoint: process.env.GRAPHCMS_ENDPOINT,
+        token: process.env.GRAPHCMS_TOKEN,
+      },
+    },
+    'gatsby-plugin-postcss',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
