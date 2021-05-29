@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 import {useLocation} from '@reach/router';
-import {UseStateQuery, graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery} from 'gatsby';
 
 const query = graphql`
 query Seo {

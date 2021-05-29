@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { Layout } from '../../components';
+import { Layout, Seo } from '../../components';
 import ReactMarkdown from 'react-markdown';
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Seo from '../../components/SEO';
 import {formatDate} from '../../utils';
 
 const PostLayout = ({ data: { graphCmsPost: post, cover } }) => {
